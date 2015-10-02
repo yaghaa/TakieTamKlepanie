@@ -1,0 +1,5 @@
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\TextFileOperations\bin\Debug\TextFileOperations.dll
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\TextFileOperations\bin\Debug\TextFileOperations.pdb
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\TextFileOperations\obj\Debug\TextFileOperations.dll
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\TextFileOperations\obj\Debug\TextFileOperations.pdb
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\TextFileOperations\obj\Debug\PersonDataFileOperations.csprojResolveAssemblyReference.cache

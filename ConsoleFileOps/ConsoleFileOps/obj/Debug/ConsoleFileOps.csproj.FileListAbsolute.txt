@@ -1,0 +1,8 @@
+c:\users\agata\documents\visual studio 2013\Projects\ConsoleFileOps\ConsoleFileOps\bin\Debug\ConsoleFileOps.exe.config
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\ConsoleFileOps\bin\Debug\ConsoleFileOps.exe
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\ConsoleFileOps\bin\Debug\ConsoleFileOps.pdb
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\ConsoleFileOps\bin\Debug\TextFileOperations.dll
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\ConsoleFileOps\bin\Debug\TextFileOperations.pdb
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\ConsoleFileOps\obj\Debug\ConsoleFileOps.csprojResolveAssemblyReference.cache
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\ConsoleFileOps\obj\Debug\ConsoleFileOps.exe
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\ConsoleFileOps\obj\Debug\ConsoleFileOps.pdb
