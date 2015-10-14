@@ -1,0 +1,8 @@
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SystemyOperacyjneZadanie1.exe.config
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SystemyOperacyjneZadanie1.exe
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SystemyOperacyjneZadanie1.pdb
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SchedulingAccessToCPU.dll
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SchedulingAccessToCPU.pdb
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\obj\Debug\SystemyOperacyjneZadanie1.csprojResolveAssemblyReference.cache
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\obj\Debug\SystemyOperacyjneZadanie1.exe
+C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\obj\Debug\SystemyOperacyjneZadanie1.pdb
