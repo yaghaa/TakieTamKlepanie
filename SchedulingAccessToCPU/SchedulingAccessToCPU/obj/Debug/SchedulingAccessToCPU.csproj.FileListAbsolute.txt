@@ -3,3 +3,8 @@ C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\Sched
 C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SchedulingAccessToCPU\obj\Debug\SchedulingAccessToCPU.csprojResolveAssemblyReference.cache
 C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SchedulingAccessToCPU\obj\Debug\SchedulingAccessToCPU.dll
 C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SchedulingAccessToCPU\obj\Debug\SchedulingAccessToCPU.pdb
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SchedulingAccessToCPU\bin\Debug\SchedulingAccessToCPU.dll
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SchedulingAccessToCPU\bin\Debug\SchedulingAccessToCPU.pdb
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SchedulingAccessToCPU\obj\Debug\SchedulingAccessToCPU.csprojResolveAssemblyReference.cache
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SchedulingAccessToCPU\obj\Debug\SchedulingAccessToCPU.dll
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SchedulingAccessToCPU\obj\Debug\SchedulingAccessToCPU.pdb

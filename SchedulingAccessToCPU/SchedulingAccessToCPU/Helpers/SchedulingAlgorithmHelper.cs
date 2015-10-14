@@ -85,14 +85,24 @@ namespace SchedulingAccessToCPU
             }
         }
 
-        public static Queue<Process> copyProcessQueue(Queue<Process> queueProcess)
+        public static Queue<Process> CopyProcessQueue(Queue<Process> queueProcess)
         {
             var queueResult = new Queue<Process>();
             foreach (var proces in queueProcess)
             {
-                queueResult.Enqueue(proces);
+                queueResult.Enqueue(new Process(proces.ProcessNumber, proces.CpuPhaseLength, proces.EntryTime, proces.WaitingTime));
             }
             return queueResult;
+        }
+
+        public static List<Process> CopyProcessList(List<Process> listProcess)
+        {
+            var listResult = new List<Process>();
+            foreach (var proces in listProcess)
+            {
+                listResult.Add(new Process(proces.ProcessNumber, proces.CpuPhaseLength, proces.EntryTime, proces.WaitingTime));
+            }
+            return listResult;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace SchedulingAccessToCPU
         {
             int peekToGoTime = 0;
                         _completeProcessList = new List<Process>();
-
+            
             do
             {
                 if (queueProcesses.Count != 0)

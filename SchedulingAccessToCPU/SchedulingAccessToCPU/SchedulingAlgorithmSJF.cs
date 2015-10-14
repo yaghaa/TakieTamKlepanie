@@ -16,15 +16,11 @@ namespace SchedulingAccessToCPU
         public SimulationResult Simulation(Queue<Process> queueProcesses, List<Process> listProcesses)
         {
             int peekToGoTime = 0;
-           // SchedulingAlgorithmHelper.ShowQueue(queueProcesses); // !!!
-            _completeProcessList = new List<Process>();
-
+           _completeProcessList = new List<Process>();
             queueProcesses = SchedulingAlgorithmHelper.SortQueue(queueProcesses);  // sortowanie kolejki początkowych procesów
-            SchedulingAlgorithmHelper.ShowQueue(queueProcesses); // !!!
-
+            
             do
             {
-                Console.WriteLine(_time);
                 if (queueProcesses.Count != 0)
                 {
                     if (peekToGoTime == queueProcesses.Peek().CpuPhaseLength) // zdjęcie procesu z kolejki
@@ -35,18 +31,12 @@ namespace SchedulingAccessToCPU
                         queueProcesses.Dequeue();
                         peekToGoTime = 0;
                     }
-                    foreach (var process in queueProcesses)
-                    {
-                        Console.WriteLine(process.ProcessNumber + "  "+ process.WaitingTime);
-                    }
+                    
                     foreach (var process in queueProcesses) // zwiększenie czasu oczekiwania wszystkim oprócz Peeka
                     {
                         if (process == queueProcesses.Peek())
                             continue;
-                        Console.WriteLine(process.ProcessNumber);   // !!!
-                        Console.WriteLine(process.WaitingTime);   // !!!
                         process.WaitingTime++;
-                        Console.WriteLine(process.WaitingTime);   // !!!
                     }  
                 }
 

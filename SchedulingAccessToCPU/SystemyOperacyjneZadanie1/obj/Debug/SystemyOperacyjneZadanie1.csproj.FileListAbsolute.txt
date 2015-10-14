@@ -6,3 +6,11 @@ C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\Syste
 C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\obj\Debug\SystemyOperacyjneZadanie1.csprojResolveAssemblyReference.cache
 C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\obj\Debug\SystemyOperacyjneZadanie1.exe
 C:\Users\Agata\Documents\Visual Studio 2013\Projects\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\obj\Debug\SystemyOperacyjneZadanie1.pdb
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SystemyOperacyjneZadanie1.exe.config
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\obj\Debug\SystemyOperacyjneZadanie1.exe
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\obj\Debug\SystemyOperacyjneZadanie1.pdb
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SystemyOperacyjneZadanie1.exe
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SystemyOperacyjneZadanie1.pdb
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SchedulingAccessToCPU.dll
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\bin\Debug\SchedulingAccessToCPU.pdb
+C:\aga\06_Robocze\Repo_01\SchedulingAccessToCPU\SystemyOperacyjneZadanie1\obj\Debug\SystemyOperacyjneZadanie1.csprojResolveAssemblyReference.cache
