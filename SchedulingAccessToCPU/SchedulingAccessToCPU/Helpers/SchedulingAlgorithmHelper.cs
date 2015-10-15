@@ -9,7 +9,7 @@ namespace SchedulingAccessToCPU
         public static SimulationData PrepareSimulationData()
         {
             ProcessList testData = new ProcessList();
-            var listProcess = testData.CreateProcessList(10);
+            var listProcess = testData.CreateProcessList(40);
 
             Queue<Process> queueProcess = new Queue<Process>();
 

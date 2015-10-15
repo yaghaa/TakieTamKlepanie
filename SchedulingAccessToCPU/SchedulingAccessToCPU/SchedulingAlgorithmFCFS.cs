@@ -16,20 +16,20 @@ namespace SchedulingAccessToCPU
 
         public SimulationResult Simulation(Queue<Process> queueProcesses, List<Process> listProcesses)
         {
-            int peekToGoTime = 0;
+            int peekProcessingTime = 0;
                         _completeProcessList = new List<Process>();
             
             do
             {
                 if (queueProcesses.Count != 0)
                 {
-                    if (peekToGoTime == queueProcesses.Peek().CpuPhaseLength) // zdjęcie procesu z kolejki
+                    if (peekProcessingTime == queueProcesses.Peek().CpuPhaseLength) // zdjęcie procesu z kolejki
                     {
                         _completeProcessList.Add(queueProcesses.Peek());
                         _processCounter++;
                         _waitingTimeResult += queueProcesses.Peek().WaitingTime;
                         queueProcesses.Dequeue();
-                        peekToGoTime = 0;
+                        peekProcessingTime = 0;
                     }
 
                     foreach (var process in queueProcesses) // zwiększenie czasu oczekiwania wszystkim oprócz Peeka
@@ -47,7 +47,7 @@ namespace SchedulingAccessToCPU
                     listProcesses.Remove(listProcesses[0]);
                 }
                 _time++;
-                peekToGoTime++;
+                peekProcessingTime++;
 
             } while (queueProcesses.Count != 0 || listProcesses.Count != 0);
 

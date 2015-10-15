@@ -22,6 +22,9 @@ namespace SystemyOperacyjneZadanie1
             var queueProcess3 = SchedulingAlgorithmHelper.CopyProcessQueue(queueProcess);
             var listProcess3 = SchedulingAlgorithmHelper.CopyProcessList(listProcess);
 
+            var queueProcess4 = SchedulingAlgorithmHelper.CopyProcessQueue(queueProcess);
+            var listProcess4 = SchedulingAlgorithmHelper.CopyProcessList(listProcess);
+
           //  SchedulingAlgorithmHelper.ShowQueue(queueProcess);
           //  SchedulingAlgorithmHelper.ShowQueue(queueProcess2);
           //  SchedulingAlgorithmHelper.ShowQueue(queueProcess3);
@@ -52,6 +55,16 @@ namespace SystemyOperacyjneZadanie1
             Console.WriteLine("Ilość przetworzonych procesów: " + resultSRTF.CompleteProcessList.Count);
             Console.WriteLine();
             //resultSRTF.ShowAllCompleteProcesses();
+
+            // ---------- RR dla danych testList1 ----------
+            SchedulingAlgorithmRR RR = new SchedulingAlgorithmRR();
+            var resultRR = RR.Simulation(queueProcess4, listProcess4);
+            Console.WriteLine("RR");
+            Console.WriteLine("Średni czas oczekiwania:       " + resultRR.AverageWaitingTime);
+            Console.WriteLine("Ilość przetworzonych procesów: " + resultRR.CompleteProcessList.Count);
+            Console.WriteLine();
+            //resultRR.ShowAllCompleteProcesses();
+
 
             Console.ReadKey();
         }

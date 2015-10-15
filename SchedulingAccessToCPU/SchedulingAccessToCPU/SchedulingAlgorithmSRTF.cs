@@ -15,7 +15,7 @@ namespace SchedulingAccessToCPU
 
         public SimulationResult Simulation(Queue<Process> queueProcesses, List<Process> listProcesses)
         {
-            int peekToGoTime = 0;
+            int peekProcessingTime = 0;
             // SchedulingAlgorithmHelper.ShowQueue(queueProcesses); // !!!
             _completeProcessList = new List<Process>();
 
@@ -26,13 +26,13 @@ namespace SchedulingAccessToCPU
             {
                 if (queueProcesses.Count != 0)
                 {
-                    if (peekToGoTime == queueProcesses.Peek().CpuPhaseLength) // zdjęcie procesu z kolejki
+                    if (peekProcessingTime == queueProcesses.Peek().CpuPhaseLength) // zdjęcie procesu z kolejki
                     {
                         _completeProcessList.Add(queueProcesses.Peek());
                         _processCounter++;
                         _waitingTimeResult += queueProcesses.Peek().WaitingTime;
                         queueProcesses.Dequeue();
-                        peekToGoTime = 0;
+                        peekProcessingTime = 0;
                     }
 
                     foreach (var process in queueProcesses) // zwiększenie czasu oczekiwania wszystkim oprócz Peeka
@@ -48,7 +48,7 @@ namespace SchedulingAccessToCPU
                 {
                     queueProcesses.Enqueue(listProcesses[0]);
 
-                    if (listProcesses[0].CpuPhaseLength >= (queueProcesses.Peek().CpuPhaseLength - peekToGoTime))
+                    if (listProcesses[0].CpuPhaseLength >= (queueProcesses.Peek().CpuPhaseLength - peekProcessingTime))
                     {
                         queueProcesses = SchedulingAlgorithmHelper.SortQueueWithoutPeek(queueProcesses); // sortowanie kolejki po dodaniu nowego procesu
                     }
@@ -56,15 +56,15 @@ namespace SchedulingAccessToCPU
                     {
                        // SchedulingAlgorithmHelper.ShowQueue(_queueProcess); // !!!
                        // Console.WriteLine("Czas pozostały do wykonania procesu Peek: " + (_queueProcess.Peek().CpuPhaseLength - peekToGoTime));
-                        queueProcesses = SchedulingAlgorithmHelper.SortQueueWithExpropriation(queueProcesses, peekToGoTime); // sortowanie kolejki po dodaniu nowego procesu Z WYWLASZCZENIEM
-                        peekToGoTime = 0;
+                        queueProcesses = SchedulingAlgorithmHelper.SortQueueWithExpropriation(queueProcesses, peekProcessingTime); // sortowanie kolejki po dodaniu nowego procesu Z WYWLASZCZENIEM
+                        peekProcessingTime = 0;
                         _expropriationCounter++;
                        // SchedulingAlgorithmHelper.ShowQueue(_queueProcess); // !!!
                     }
                     listProcesses.Remove(listProcesses[0]);
                 }
                 _time++;
-                peekToGoTime++;
+                peekProcessingTime++;
 
             } while (queueProcesses.Count != 0 || listProcesses.Count != 0);
 
