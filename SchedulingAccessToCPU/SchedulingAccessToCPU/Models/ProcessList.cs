@@ -12,7 +12,7 @@ namespace SchedulingAccessToCPU
 
             for (int i = 0; i < sizeOfList; i++)
             {
-                processList.Add(new Process('p' + (i + 1).ToString(), phaseLength.Next(1, 20), 0, 0));
+                processList.Add(new Process('p' + (i + 1).ToString(), phaseLength.Next(1, 100), 0, 0));
             }
             return processList;
         }
