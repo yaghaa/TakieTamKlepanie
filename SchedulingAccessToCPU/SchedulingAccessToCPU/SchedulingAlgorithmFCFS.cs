@@ -53,6 +53,10 @@ namespace SchedulingAccessToCPU
 
             _averageWaitingTimeResult = _waitingTimeResult/_processCounter;
 
+            var filePath = "C:\\aga\\06_Robocze\\SchedulingAccesToCpuFCFS.txt";
+            var saveToTextFile = new TextFileSchedulingAccessToCPU();
+            saveToTextFile.SaveFile(_completeProcessList, filePath);
+
             return new SimulationResult()
             {
                 AverageWaitingTime = _averageWaitingTimeResult,

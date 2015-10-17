@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\FileRepositoryHelper.cs" />
     <Compile Include="Interfaces\ISchedulingAlgorithm.cs" />
     <Compile Include="Models\Process.cs" />
     <Compile Include="Models\ProcessList.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="SchedulingAlgorithmSRTF.cs" />
     <Compile Include="Models\SimulationData.cs" />
     <Compile Include="Models\SimulationResult.cs" />
+    <Compile Include="TextFileSchedulingAccessToCPU.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

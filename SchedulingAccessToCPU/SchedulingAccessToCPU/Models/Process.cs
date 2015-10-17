@@ -18,5 +18,9 @@ namespace SchedulingAccessToCPU
             WaitingTime = waitingTime;
         }
 
+        public override string ToString()
+        {
+            return ProcessNumber + " \n" + CpuPhaseLength + " \n" + EntryTime + " \n" + WaitingTime + " \n";
+        }
     }
 }

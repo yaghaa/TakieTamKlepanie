@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace SchedulingAccessToCPU
 {
@@ -26,6 +27,12 @@ namespace SchedulingAccessToCPU
                 process.EntryTime = timeRandom.Next(1, 10)+time;
                 time = process.EntryTime;
             }
+
+            var completeProcessList = queueProcess.ToList();
+            completeProcessList.AddRange(listProcess);
+            var filePath = "C:\\aga\\06_Robocze\\SchedulingAccesToCpuStartList.txt";
+            var saveToTextFile = new TextFileSchedulingAccessToCPU();
+            saveToTextFile.SaveFile(completeProcessList, filePath);
 
             return new SimulationData() { QueueProcess = queueProcess, ListProcess = listProcess };
         }
@@ -103,6 +110,45 @@ namespace SchedulingAccessToCPU
                 listResult.Add(new Process(proces.ProcessNumber, proces.CpuPhaseLength, proces.EntryTime, proces.WaitingTime));
             }
             return listResult;
+        }
+
+        public static Queue<Process> CreateMyQueue()
+        {
+            Queue<Process> processQueue = new Queue<Process>();
+
+            processQueue.Enqueue(new Process('p' + 1.ToString(), 80, 0, 0));
+            processQueue.Enqueue(new Process('p' + 2.ToString(), 72, 0, 0));
+            processQueue.Enqueue(new Process('p' + 3.ToString(), 84, 0, 0));
+            processQueue.Enqueue(new Process('p' + 4.ToString(), 7, 0, 0));
+            processQueue.Enqueue(new Process('p' + 5.ToString(), 24, 0, 0));
+            processQueue.Enqueue(new Process('p' + 6.ToString(), 2, 0, 0));
+            processQueue.Enqueue(new Process('p' + 7.ToString(), 3, 0, 0));
+            processQueue.Enqueue(new Process('p' + 8.ToString(), 20, 0, 0));
+            processQueue.Enqueue(new Process('p' + 9.ToString(), 19, 0, 0));
+            processQueue.Enqueue(new Process('p' + 10.ToString(), 16, 0, 0));
+            processQueue.Enqueue(new Process('p' + 11.ToString(), 18, 0, 0));
+            processQueue.Enqueue(new Process('p' + 12.ToString(), 10, 0, 0));
+            processQueue.Enqueue(new Process('p' + 13.ToString(), 14, 0, 0));
+            processQueue.Enqueue(new Process('p' + 14.ToString(), 13, 0, 0));
+            processQueue.Enqueue(new Process('p' + 15.ToString(), 12, 0, 0));
+            processQueue.Enqueue(new Process('p' + 16.ToString(), 10, 0, 0));
+            processQueue.Enqueue(new Process('p' + 17.ToString(), 3, 0, 0));
+            processQueue.Enqueue(new Process('p' + 18.ToString(), 7, 0, 0));
+            processQueue.Enqueue(new Process('p' + 19.ToString(), 5, 0, 0));
+            processQueue.Enqueue(new Process('p' + 20.ToString(), 8, 0, 0));
+           
+            return processQueue;
+        }
+
+        public static Queue<Process> CreateMyQueue2()
+        {
+            Queue<Process> processQueue = new Queue<Process>();
+
+            processQueue.Enqueue(new Process('p' + 1.ToString(), 21, 0, 0));
+            processQueue.Enqueue(new Process('p' + 2.ToString(), 6, 0, 0));
+            processQueue.Enqueue(new Process('p' + 3.ToString(), 3, 0, 0));
+            
+            return processQueue;
         }
     }
 }

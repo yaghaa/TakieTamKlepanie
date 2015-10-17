@@ -70,6 +70,10 @@ namespace SchedulingAccessToCPU
 
             _averageWaitingTimeResult = _waitingTimeResult / _processCounter;
 
+            var filePath = "C:\\aga\\06_Robocze\\SchedulingAccesToCpuSRTF.txt";
+            var saveToTextFile = new TextFileSchedulingAccessToCPU();
+            saveToTextFile.SaveFile(_completeProcessList, filePath);
+
             Console.WriteLine("Ilość wywłaszczeń: " + _expropriationCounter);
 
             return new SimulationResult()

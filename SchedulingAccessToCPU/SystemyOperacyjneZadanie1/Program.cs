@@ -11,10 +11,13 @@ namespace SystemyOperacyjneZadanie1
     {
         static void Main(string[] args)
         {
-            
+
             var simulationData = SchedulingAlgorithmHelper.PrepareSimulationData();
             var queueProcess = simulationData.QueueProcess;
             var listProcess = simulationData.ListProcess;
+            
+            //var queueProcess = SchedulingAlgorithmHelper.CreateMyQueue();
+            //var listProcess = new List<Process>();
 
             var queueProcess2 = SchedulingAlgorithmHelper.CopyProcessQueue(queueProcess);
             var listProcess2 = SchedulingAlgorithmHelper.CopyProcessList(listProcess);
@@ -25,9 +28,11 @@ namespace SystemyOperacyjneZadanie1
             var queueProcess4 = SchedulingAlgorithmHelper.CopyProcessQueue(queueProcess);
             var listProcess4 = SchedulingAlgorithmHelper.CopyProcessList(listProcess);
 
+            
           //  SchedulingAlgorithmHelper.ShowQueue(queueProcess);
           //  SchedulingAlgorithmHelper.ShowQueue(queueProcess2);
           //  SchedulingAlgorithmHelper.ShowQueue(queueProcess3);
+          //  SchedulingAlgorithmHelper.ShowQueue(queueProcess4);
             
             // ---------- FCFS dla danych testList1 ----------
             SchedulingAlgorithmFCFS FCDS = new SchedulingAlgorithmFCFS();

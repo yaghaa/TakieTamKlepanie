@@ -10,7 +10,7 @@ namespace SchedulingAccessToCPU
         private double _averageWaitingTimeResult = 0;
         private double _waitingTimeResult = 0;
         private int _processCounter = 0;
-        private int _quantumOfTime = 8;     // kwant czasu
+        private const int QuantumOfTime = 15;     // kwant czasu
 
         public SimulationResult Simulation(Queue<Process> queueProcesses, List<Process> listProcesses)
         {
@@ -38,7 +38,7 @@ namespace SchedulingAccessToCPU
                         process.WaitingTime++;
                     }
 
-                    if (peekProcessingTime == _quantumOfTime)   // przesunięcie procesu na koniec kolejki po upływie kwantu czasu     RRRRRRRRRRRRR
+                    if (peekProcessingTime == QuantumOfTime)   // przesunięcie procesu na koniec kolejki po upływie kwantu czasu     RRRRRRRRRRRRR
                     {
                         queueProcesses.Peek().CpuPhaseLength -= peekProcessingTime; 
                         var tempProcess = queueProcesses.Dequeue();
@@ -60,6 +60,10 @@ namespace SchedulingAccessToCPU
             } while (queueProcesses.Count != 0 || listProcesses.Count != 0);
 
             _averageWaitingTimeResult = _waitingTimeResult / _processCounter;
+
+            var filePath = "C:\\aga\\06_Robocze\\SchedulingAccesToCpuRR.txt";
+            var saveToTextFile = new TextFileSchedulingAccessToCPU();
+            saveToTextFile.SaveFile(_completeProcessList, filePath);
 
             return new SimulationResult()
             {
