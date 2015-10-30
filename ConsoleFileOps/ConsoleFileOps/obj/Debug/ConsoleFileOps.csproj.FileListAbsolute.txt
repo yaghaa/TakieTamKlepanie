@@ -9,3 +9,8 @@ C:\Users\Agata\Documents\Visual Studio 2013\Projects\ConsoleFileOps\ConsoleFileO
 C:\aga\06_Robocze\Repo_01\ConsoleFileOps\ConsoleFileOps\bin\Debug\ConsoleFileOps.exe.config
 C:\aga\06_Robocze\Repo_01\ConsoleFileOps\ConsoleFileOps\obj\Debug\ConsoleFileOps.exe
 C:\aga\06_Robocze\Repo_01\ConsoleFileOps\ConsoleFileOps\obj\Debug\ConsoleFileOps.pdb
+C:\aga\06_Robocze\Repo_01\ConsoleFileOps\ConsoleFileOps\bin\Debug\ConsoleFileOps.exe
+C:\aga\06_Robocze\Repo_01\ConsoleFileOps\ConsoleFileOps\bin\Debug\ConsoleFileOps.pdb
+C:\aga\06_Robocze\Repo_01\ConsoleFileOps\ConsoleFileOps\bin\Debug\TextFileOperations.dll
+C:\aga\06_Robocze\Repo_01\ConsoleFileOps\ConsoleFileOps\bin\Debug\TextFileOperations.pdb
+C:\aga\06_Robocze\Repo_01\ConsoleFileOps\ConsoleFileOps\obj\Debug\ConsoleFileOps.csprojResolveAssemblyReference.cache
