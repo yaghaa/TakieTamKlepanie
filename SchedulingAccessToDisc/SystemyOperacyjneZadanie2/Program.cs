@@ -13,9 +13,8 @@ namespace SystemyOperacyjneZadanie2
         {
             var simulationDataCreator = new SchedulingAccessToDisc.Models.SimulationData();
             var simulationData = simulationDataCreator.CreateArrayOfCommissionList(100);
-
             
-           // var simulationData2 = simulationDataCreator.CopyArrayOfCommissionList(simulationData);
+            var simulationData2 = simulationDataCreator.CopyArrayOfCommissionList(simulationData);
             var simulationData3 = simulationDataCreator.CopyArrayOfCommissionList(simulationData);
             var simulationData4 = simulationDataCreator.CopyArrayOfCommissionList(simulationData);
 
@@ -27,6 +26,14 @@ namespace SystemyOperacyjneZadanie2
             Console.WriteLine("Ilość przetworzonych procesów: " + resultFCFS.CompleteCommissionList.Count);
             Console.WriteLine();
 
+            // ---------- SSTF dla danych testList1 ----------
+            DiscSchedulingAlgorithmSSTF SSTF = new DiscSchedulingAlgorithmSSTF();
+            var resultSSTF = SSTF.Simulation(simulationData2);
+            Console.WriteLine("SSTF");
+            Console.WriteLine("Ilość przemieszczeń głowicy:   " + resultSSTF.DisplacementHeadSum);
+            Console.WriteLine("Ilość przetworzonych procesów: " + resultSSTF.CompleteCommissionList.Count);
+            Console.WriteLine();
+
             // ---------- SCAN dla danych testList1 ----------
             DiscSchedulingAlgorithmSCAN SCAN = new DiscSchedulingAlgorithmSCAN();
             var resultSCAN = SCAN.Simulation(simulationData3);
@@ -36,7 +43,7 @@ namespace SystemyOperacyjneZadanie2
             Console.WriteLine();
 
             // ---------- C-SCAN dla danych testList1 ----------
-            DiscSchedulingAlgorithmSCAN CSCAN = new DiscSchedulingAlgorithmSCAN();
+            DiscSchedulingAlgorithmCSCAN CSCAN = new DiscSchedulingAlgorithmCSCAN();
             var resultCSCAN = CSCAN.Simulation(simulationData4);
             Console.WriteLine("C-SCAN");
             Console.WriteLine("Ilość przemieszczeń głowicy:   " + resultCSCAN.DisplacementHeadSum);

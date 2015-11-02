@@ -21,7 +21,7 @@ namespace SchedulingAccessToDisc.Models
 
             for (int i = 0; i < sizeOfList/2; i++)
             {
-                waitingCommissionList.Add(new Commission(commissionNumber.Next(1, 100), entrySum += entryTime.Next(1, 5)));
+                waitingCommissionList.Add(new Commission(commissionNumber.Next(1, 100), entrySum += entryTime.Next(1, 10)));
             }
 
             var temp = new List<Commission>[2];

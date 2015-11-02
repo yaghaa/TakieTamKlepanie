@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using SchedulingAccessToDisc.Interfaces;
 using SchedulingAccessToDisc.Models;
@@ -11,13 +12,14 @@ namespace SchedulingAccessToDisc
         private List<Commission> _completeCommissionList = new List<Commission>();
         private int _presentPosition = 0;
 
-        // DO NAPISANIA
-        // CALE ZLE
 
         public SimulationResult Simulation(List<Commission>[] commissionArray)
         {
             var commissionList = commissionArray[0];
             var waitingCommissionList = commissionArray[1];
+
+            CommissionBubbleSortByDistanceFromHead(commissionList, _presentPosition);       // SORTOWANIE LISTY PROCESÓW WZGLĘDEM ODLEGŁOŚCI OD GŁOWICY
+            //Show(commissionList);
 
             do
             {
@@ -27,21 +29,22 @@ namespace SchedulingAccessToDisc
 
                 if (commissionList.Count != 0)
                 {
-                    if (_presentPosition == commissionList[0].CommissionNumber) // zdjęcie procesu z kolejki
+                    if (_presentPosition == commissionList[0].CommissionNumber) // zdjęcie procesu z listy
                     {
                         _completeCommissionList.Add(commissionList[0]);
                         commissionList.Remove(commissionList.First());
                     }
                 }
 
-                if (commissionList.Count != 0 && waitingCommissionList.Count != 0 && waitingCommissionList[0].EntryTime == _presentPosition) // dodanie do kolejki
+                if (commissionList.Count != 0 && waitingCommissionList.Count != 0 && waitingCommissionList[0].EntryTime == _displacementHeadSum) // dodanie do listy
                 {
                     commissionList.Add(waitingCommissionList[0]);
                     waitingCommissionList.Remove(waitingCommissionList[0]);
+                    CommissionBubbleSortByDistanceFromHead(commissionList, _presentPosition);   // SORTOWANIE LISTY PROCESÓW WZGLĘDEM ODLEGŁOŚCI OD GŁOWICY
                 }
 
 
-            } while (commissionList.Count != 0);
+            } while (commissionList.Count != 0 || waitingCommissionList.Count != 0);
 
             return new SimulationResult()
             {
@@ -57,5 +60,33 @@ namespace SchedulingAccessToDisc
             if (presentPosition > commissionList[0].CommissionNumber) return --presentPosition;
             return presentPosition;
         }
+
+        private void CommissionBubbleSortByDistanceFromHead(List<Commission> lista, int presentPosition)
+        {
+            int n = lista.Count;
+            do
+            {
+                for (int i = 0; i < n - 1; i++)
+                {
+                    if (Math.Abs(presentPosition - lista[i].CommissionNumber) > Math.Abs(presentPosition - lista[i + 1].CommissionNumber))
+                    {
+                        Commission tmp = lista[i];
+                        lista[i] = lista[i + 1];
+                        lista[i + 1] = tmp;
+                    }
+                }
+                n--;
+            }
+            while (n > 1);
+        }
+
+        private void Show(List<Commission> list)
+        {
+            foreach (var element in list)
+            {
+                Console.WriteLine(element);
+            }
+        }
+
     }
 }

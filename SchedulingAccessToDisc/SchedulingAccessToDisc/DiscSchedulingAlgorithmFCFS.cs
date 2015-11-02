@@ -32,14 +32,14 @@ namespace SchedulingAccessToDisc
                     }
                 }
 
-                if (commissionList.Count != 0 && waitingCommissionList.Count !=0  && waitingCommissionList[0].EntryTime == _presentPosition) // dodanie do kolejki
+                if (commissionList.Count != 0 && waitingCommissionList.Count != 0 && waitingCommissionList[0].EntryTime == _displacementHeadSum) // dodanie do kolejki
                 {
                     commissionList.Add(waitingCommissionList[0]);
                     waitingCommissionList.Remove(waitingCommissionList[0]);
                 }
 
 
-            } while (commissionList.Count != 0);
+            } while (commissionList.Count != 0 || waitingCommissionList.Count != 0);
 
             return new SimulationResult()
             {

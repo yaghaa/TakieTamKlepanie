@@ -22,24 +22,29 @@ namespace SchedulingAccessToDisc
                 
                 if (commissionList.Count != 0)
                 {
-                    for (int i = 0; i < commissionList.Count; i++)                    // NIEEFEKTYWNE !!!     
+                    var tempCommissionListToRemve = new List<Commission>();
+                    foreach (var commission in commissionList)                  // PRZEJRZENIE LISTY PROCESÓW - ZDJĘCIE PROCESÓW NA DANEJ POZYCJI !!!  
                     {
-                        if (_presentPosition == commissionList[i].CommissionNumber)   // zdjęcie procesu z kolejki 
+                        if (_presentPosition == commission.CommissionNumber)   
                         {
-                            _completeCommissionList.Add(commissionList[i]);
-                            commissionList.Remove(commissionList[i]);
+                            _completeCommissionList.Add(commission);            
+                            tempCommissionListToRemve.Add(commission);          //  tymczasowa lista procesów
                         }
+                    }
+                    foreach (var commission in tempCommissionListToRemve)       // USUNIECIE PROCESOW Z LISTY PROCESÓW
+                    {
+                        commissionList.Remove(commission);
                     }
                 }
 
-                if (commissionList.Count != 0 && waitingCommissionList.Count != 0 && waitingCommissionList[0].EntryTime == _presentPosition)   // dodanie do kolejki
+                if (waitingCommissionList.Count != 0 && waitingCommissionList[0].EntryTime == _displacementHeadSum)   // dodanie do kolejki
                 {
                     commissionList.Add(waitingCommissionList[0]);
                     waitingCommissionList.Remove(waitingCommissionList[0]);
                 }
 
 
-            } while (commissionList.Count != 0);
+            } while (commissionList.Count != 0 || waitingCommissionList.Count != 0);
 
             return new SimulationResult()
             {
