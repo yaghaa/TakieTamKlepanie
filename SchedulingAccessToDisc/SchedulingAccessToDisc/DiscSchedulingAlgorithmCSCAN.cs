@@ -10,14 +10,14 @@ namespace SchedulingAccessToDisc
         private List<Commission> _completeCommissionList = new List<Commission>();
         private int _presentPosition = 0;
 
-        public SimulationResult Simulation(List<Commission>[] commissionArray)
+        public SimulationResult Simulation(List<Commission>[] commissionArray, int discSize)
         {
             var commissionList = commissionArray[0];
             var waitingCommissionList = commissionArray[1];
             
             do
             {
-                _presentPosition = MoveHead(_presentPosition, _displacementHeadSum);  // przesunięcie głowicy
+                _presentPosition = MoveHead(_presentPosition, _displacementHeadSum, discSize);  // przesunięcie głowicy
                 _displacementHeadSum++;                                               // licznik przemieszczeń ++
                 
                 if (commissionList.Count != 0)
@@ -53,9 +53,9 @@ namespace SchedulingAccessToDisc
             };
         }
 
-        private int MoveHead(int presentPosition, int displacementHeadSum)
+        private int MoveHead(int presentPosition, int displacementHeadSum, int discSize)
         {
-            if ((displacementHeadSum % 100) == 0 ) return 0;
+            if ((displacementHeadSum % discSize) == 0) return 0;
             return ++presentPosition;
         }
     }

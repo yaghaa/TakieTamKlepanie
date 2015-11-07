@@ -11,7 +11,7 @@ namespace SchedulingAccessToDisc
         private List<Commission> _completeCommissionList = new List<Commission>();
         private int _presentPosition = 0;
 
-        public SimulationResult Simulation(List<Commission>[] commissionArray)
+        public SimulationResult Simulation(List<Commission>[] commissionArray, int discSize)
         {
             var commissionList = commissionArray[0];
             var waitingCommissionList = commissionArray[1];
@@ -20,7 +20,7 @@ namespace SchedulingAccessToDisc
 
             do
             {
-                if (counterHelper == 100 )
+                if (counterHelper == discSize)
                 {
                     ifAscending = !ifAscending;
                     counterHelper = 0;

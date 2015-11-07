@@ -5,6 +5,6 @@ namespace SchedulingAccessToDisc.Interfaces
 {
     public interface IDiscSchedulingAlgorithm
     {
-        SimulationResult Simulation(List<Commission>[] commissionArray); 
+        SimulationResult Simulation(List<Commission>[] commissionArray, int discSize); 
     }
 }

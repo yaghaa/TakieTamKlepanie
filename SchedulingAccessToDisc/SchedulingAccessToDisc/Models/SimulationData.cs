@@ -6,7 +6,7 @@ namespace SchedulingAccessToDisc.Models
 {
     public class SimulationData
     {
-        public List<Commission>[] CreateArrayOfCommissionList(int sizeOfList)
+        public List<Commission>[] CreateArrayOfCommissionList(int sizeOfList, int discSize)
         {
             List<Commission> commissionList = new List<Commission>();
             List<Commission> waitingCommissionList = new List<Commission>();
@@ -16,12 +16,12 @@ namespace SchedulingAccessToDisc.Models
 
             for (int i = 0; i < sizeOfList / 2; i++)
             {
-                commissionList.Add(new Commission(commissionNumber.Next(1, 100), 0));
+                commissionList.Add(new Commission(commissionNumber.Next(1, discSize), 0));
             }
 
             for (int i = 0; i < sizeOfList/2; i++)
             {
-                waitingCommissionList.Add(new Commission(commissionNumber.Next(1, 100), entrySum += entryTime.Next(1, 10)));
+                waitingCommissionList.Add(new Commission(commissionNumber.Next(1, discSize), entrySum += entryTime.Next(1, 10)));
             }
 
             var temp = new List<Commission>[2];

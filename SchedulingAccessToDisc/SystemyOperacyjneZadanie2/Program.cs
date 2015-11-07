@@ -11,8 +11,10 @@ namespace SystemyOperacyjneZadanie2
     {
         static void Main(string[] args)
         {
+            int discSize = 100;
+
             var simulationDataCreator = new SchedulingAccessToDisc.Models.SimulationData();
-            var simulationData = simulationDataCreator.CreateArrayOfCommissionList(100);
+            var simulationData = simulationDataCreator.CreateArrayOfCommissionList(100, discSize);
             
             var simulationData2 = simulationDataCreator.CopyArrayOfCommissionList(simulationData);
             var simulationData3 = simulationDataCreator.CopyArrayOfCommissionList(simulationData);
@@ -20,7 +22,7 @@ namespace SystemyOperacyjneZadanie2
 
             // ---------- FCFS dla danych testList1 ----------
             DiscSchedulingAlgorithmFCFS FCFS = new DiscSchedulingAlgorithmFCFS();
-            var resultFCFS = FCFS.Simulation(simulationData);
+            var resultFCFS = FCFS.Simulation(simulationData, discSize);
             Console.WriteLine("FCFS");
             Console.WriteLine("Ilość przemieszczeń głowicy:   " + resultFCFS.DisplacementHeadSum);
             Console.WriteLine("Ilość przetworzonych procesów: " + resultFCFS.CompleteCommissionList.Count);
@@ -28,7 +30,7 @@ namespace SystemyOperacyjneZadanie2
 
             // ---------- SSTF dla danych testList1 ----------
             DiscSchedulingAlgorithmSSTF SSTF = new DiscSchedulingAlgorithmSSTF();
-            var resultSSTF = SSTF.Simulation(simulationData2);
+            var resultSSTF = SSTF.Simulation(simulationData2, discSize);
             Console.WriteLine("SSTF");
             Console.WriteLine("Ilość przemieszczeń głowicy:   " + resultSSTF.DisplacementHeadSum);
             Console.WriteLine("Ilość przetworzonych procesów: " + resultSSTF.CompleteCommissionList.Count);
@@ -36,7 +38,7 @@ namespace SystemyOperacyjneZadanie2
 
             // ---------- SCAN dla danych testList1 ----------
             DiscSchedulingAlgorithmSCAN SCAN = new DiscSchedulingAlgorithmSCAN();
-            var resultSCAN = SCAN.Simulation(simulationData3);
+            var resultSCAN = SCAN.Simulation(simulationData3, discSize);
             Console.WriteLine("SCAN");
             Console.WriteLine("Ilość przemieszczeń głowicy:   " + resultSCAN.DisplacementHeadSum);
             Console.WriteLine("Ilość przetworzonych procesów: " + resultSCAN.CompleteCommissionList.Count);
@@ -44,7 +46,7 @@ namespace SystemyOperacyjneZadanie2
 
             // ---------- C-SCAN dla danych testList1 ----------
             DiscSchedulingAlgorithmCSCAN CSCAN = new DiscSchedulingAlgorithmCSCAN();
-            var resultCSCAN = CSCAN.Simulation(simulationData4);
+            var resultCSCAN = CSCAN.Simulation(simulationData4, discSize);
             Console.WriteLine("C-SCAN");
             Console.WriteLine("Ilość przemieszczeń głowicy:   " + resultCSCAN.DisplacementHeadSum);
             Console.WriteLine("Ilość przetworzonych procesów: " + resultCSCAN.CompleteCommissionList.Count);
