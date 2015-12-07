@@ -11,7 +11,7 @@ namespace SystemyOperacyjneZadanie3
     {
         
         private static List<int> _odwolania;
-        private static int[] _pamiec;
+        private static int[] _pamiecOp;
         private readonly Random _random = new Random();
 
         static void Main(string[] args)
@@ -38,11 +38,11 @@ namespace SystemyOperacyjneZadanie3
 
             program.losujOdwolania(iloscRamek, iloscStron, iloscOdwolan);
             
-            Console.WriteLine("algorytm FIFO: " + fifo.Simulation(_odwolania, _pamiec));
-            Console.WriteLine("algorytm OPT: " + opt.Simulation(_odwolania, _pamiec));
-            Console.WriteLine("algorytm LRU: " + lru.Simulation(_odwolania, _pamiec));
-            Console.WriteLine("algorytm LRU Aproksymowany: " + lruAprox.Simulation(_odwolania, _pamiec));
-            Console.WriteLine("algorytm RND: " + rand.Simulation(_odwolania, _pamiec));
+            Console.WriteLine("algorytm FIFO: " + fifo.Simulation(_odwolania, _pamiecOp));
+            Console.WriteLine("algorytm OPT: " + opt.Simulation(_odwolania, _pamiecOp));
+            Console.WriteLine("algorytm LRU: " + lru.Simulation(_odwolania, _pamiecOp));
+            Console.WriteLine("algorytm LRU Aproksymowany: " + lruAprox.Simulation(_odwolania, _pamiecOp));
+            Console.WriteLine("algorytm RND: " + rand.Simulation(_odwolania, _pamiecOp));
           
             
             Console.ReadKey();
@@ -52,10 +52,10 @@ namespace SystemyOperacyjneZadanie3
         private void Initialize(int n)
         {
             _odwolania = new List<int>();
-            _pamiec = new int[n];
-            for (var i = 0; i < _pamiec.Length; i++)
+            _pamiecOp = new int[n];
+            for (var i = 0; i < _pamiecOp.Length; i++)
             {
-                _pamiec[i]=-1;
+                _pamiecOp[i]=-1;
             }
         }
 
@@ -68,6 +68,7 @@ namespace SystemyOperacyjneZadanie3
             {
                 tmp = _random.Next(101);
                 tmp = tmp < 40 ? _odwolania[_odwolania.Count - 1] : _random.Next(m) + 1;
+                tmp += _random.Next(2);
                 _odwolania.Add(tmp);
             }
         }

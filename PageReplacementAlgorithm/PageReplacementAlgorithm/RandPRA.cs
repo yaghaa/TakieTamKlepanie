@@ -9,11 +9,11 @@ namespace PageReplacementAlgorithm
         private static List<int> _odwolania;
         private int[] _pamiec;
 
-        public int Simulation(List<int> odwolania, int[] pamiec)
+        public int Simulation(List<int> odwolania, int[] pamiecOp)
         {
             _odwolania = odwolania;
-            _pamiec = pamiec;
-            int iloscBledowStrony = 0;
+            _pamiec = pamiecOp;
+            int numberOfPagesFaults = 0;
             int id = 0;
             int i = 0;
             Random random = new Random();
@@ -26,7 +26,7 @@ namespace PageReplacementAlgorithm
                 {
                     _pamiec[id] = _odwolania[i];
                     id++;
-                    iloscBledowStrony++;
+                    numberOfPagesFaults++;
                 }
             }
 
@@ -36,11 +36,11 @@ namespace PageReplacementAlgorithm
                 {
                     id = random.Next(_pamiec.Length);
                     _pamiec[id] = _odwolania[i];
-                    iloscBledowStrony++;
+                    numberOfPagesFaults++;
                 }
             }
 
-            return iloscBledowStrony;
+            return numberOfPagesFaults;
         }
 
 

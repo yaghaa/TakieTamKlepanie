@@ -7,49 +7,49 @@ namespace PageReplacementAlgorithm
     public class FifoPRA : IPageReplacementAlgorithm
     {
         private static List<int> _odwolania;
-        private int[] _pamiec;
+        private int[] _pamiecOp;
  
-        public int Simulation(List<int> odwolania, int[] pamiec)
+        public int Simulation(List<int> odwolania, int[] pamiecOp)
         {
             _odwolania = odwolania;
-            _pamiec = pamiec;
+            _pamiecOp = pamiecOp;
 
-            int iloscBledowStrony = 0;
+            int numberOfPagesFaults = 0;
             int id = 0;
             ClearMemory();
 
-            _pamiec[0] = _odwolania[0];
-            iloscBledowStrony = id = 1;
+            _pamiecOp[0] = _odwolania[0];
+            numberOfPagesFaults = id = 1;
 
             for (int i = 1; i < _odwolania.Count; i++)
             {
                 if (!IsInMemory(_odwolania[i]))
                 {
-                    _pamiec[id] = _odwolania[i];
-                    id = (id == _pamiec.Length - 1) ? 0 : id + 1;
-                    iloscBledowStrony++;
+                    _pamiecOp[id] = _odwolania[i];
+                    id = (id == _pamiecOp.Length - 1) ? 0 : id + 1;
+                    numberOfPagesFaults++;
                 }
             }
-            return iloscBledowStrony;
+            return numberOfPagesFaults;
         }
 
 
         private void ClearMemory()
         {
-            for (int a = 0; a < _pamiec.Length; a++)
+            for (int a = 0; a < _pamiecOp.Length; a++)
             {
-                _pamiec[a] = -1;
+                _pamiecOp[a] = -1;
             }
         }
 
         private bool IsInMemory(int odwolanie)
         {
             int i = 0;
-            while (i < _pamiec.Length && !_pamiec[i].Equals(odwolanie))
+            while (i < _pamiecOp.Length && !_pamiecOp[i].Equals(odwolanie))
             {
                 i++;
             }
-            return i != _pamiec.Length;
+            return i != _pamiecOp.Length;
         }
 
     }

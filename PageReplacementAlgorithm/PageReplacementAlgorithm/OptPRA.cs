@@ -6,24 +6,24 @@ namespace PageReplacementAlgorithm
     public class OptPRA : IPageReplacementAlgorithm
     {
         private static List<int> _odwolania;
-        private int[] _pamiec;
+        private int[] _pamiecOp;
 
-        public int Simulation(List<int> odwolania, int[] pamiec)
+        public int Simulation(List<int> odwolania, int[] pamiecOp)
         {
             _odwolania = odwolania;
-            _pamiec = pamiec;
-            int iloscBledowStrony = 0;
+            _pamiecOp = pamiecOp;
+            int numberOfPagesFaults = 0;
             int id = 0;
             int i = 0;
             ClearMemory();
 
-            for (i = 0; i < _odwolania.Count && _pamiec[_pamiec.Length - 1] == -1; i++)
+            for (i = 0; i < _odwolania.Count && _pamiecOp[_pamiecOp.Length - 1] == -1; i++)
             {
                 if (!IsInMemory(_odwolania[i]))
                 {
-                    _pamiec[id] = _odwolania[i];
+                    _pamiecOp[id] = _odwolania[i];
                     id++;
-                    iloscBledowStrony++;
+                    numberOfPagesFaults++;
                 }
             }
 
@@ -35,11 +35,11 @@ namespace PageReplacementAlgorithm
                     id = 0;
 
                     int czasNieuzywania = 0;
-                    for (int j = 0; j < _pamiec.Length; j++)
+                    for (int j = 0; j < _pamiecOp.Length; j++)
                     {
                         int tmp = 0;
 
-                        for (int k = i; k < _odwolania.Count && !_odwolania[k].Equals(_pamiec[j]); k++)
+                        for (int k = i; k < _odwolania.Count && !_odwolania[k].Equals(_pamiecOp[j]); k++)
                         {
                             tmp++;
                         }
@@ -47,31 +47,31 @@ namespace PageReplacementAlgorithm
                         czasNieuzywania = tmp > czasNieuzywania ? tmp : czasNieuzywania;
                     }
 
-                    _pamiec[id] = _odwolania[i];
-                    iloscBledowStrony++;
+                    _pamiecOp[id] = _odwolania[i];
+                    numberOfPagesFaults++;
                 }
             }
 
-            return iloscBledowStrony;
+            return numberOfPagesFaults;
         }
 
 
         private void ClearMemory()
         {
-            for (int a = 0; a < _pamiec.Length; a++)
+            for (int a = 0; a < _pamiecOp.Length; a++)
             {
-                _pamiec[a] = -1;
+                _pamiecOp[a] = -1;
             }
         }
 
         private bool IsInMemory(int odwolanie)
         {
             int i = 0;
-            while (i < _pamiec.Length && !_pamiec[i].Equals(odwolanie))
+            while (i < _pamiecOp.Length && !_pamiecOp[i].Equals(odwolanie))
             {
                 i++;
             }
-            return i != _pamiec.Length;
+            return i != _pamiecOp.Length;
         }
     }
 }
