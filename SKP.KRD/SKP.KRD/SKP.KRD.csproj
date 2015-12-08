@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +51,12 @@
     <Compile Include="AddCharacterForm.Designer.cs">
       <DependentUpon>AddCharacterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CharacterDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CharacterDetailsForm.Designer.cs">
+      <DependentUpon>CharacterDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SKP.KRD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddCharacterForm.resx">
       <DependentUpon>AddCharacterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CharacterDetailsForm.resx">
+      <DependentUpon>CharacterDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SKP.KRD.resx">
       <DependentUpon>SKP.KRD.cs</DependentUpon>

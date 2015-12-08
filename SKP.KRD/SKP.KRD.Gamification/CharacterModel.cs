@@ -9,6 +9,13 @@ namespace SKP.KRD.Gamification
         public int ExO { get; set; } 
         public List<Skill> Skills { get; set; }
 
+        public CharacterModel(string name, int exK, int exO, List<Skill> list)
+        {
+            Name = name;
+            ExK = exK;
+            ExO = exO;
+            Skills = list;
+        }
         
     }
 }

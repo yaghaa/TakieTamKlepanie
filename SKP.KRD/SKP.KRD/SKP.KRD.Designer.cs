@@ -30,8 +30,8 @@
         {
             this.dgvCharacters = new System.Windows.Forms.DataGridView();
             this.pButtons = new System.Windows.Forms.Panel();
-            this.bShowAllCharacter = new System.Windows.Forms.Button();
             this.bAddCharacter = new System.Windows.Forms.Button();
+            this.bShowAllCharacter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCharacters)).BeginInit();
             this.pButtons.SuspendLayout();
             this.SuspendLayout();
@@ -40,9 +40,10 @@
             // 
             this.dgvCharacters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCharacters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCharacters.Location = new System.Drawing.Point(0, 0);
+            this.dgvCharacters.Location = new System.Drawing.Point(0, 84);
+            this.dgvCharacters.MultiSelect = false;
             this.dgvCharacters.Name = "dgvCharacters";
-            this.dgvCharacters.Size = new System.Drawing.Size(560, 666);
+            this.dgvCharacters.Size = new System.Drawing.Size(560, 582);
             this.dgvCharacters.TabIndex = 1;
             // 
             // pButtons
@@ -55,16 +56,6 @@
             this.pButtons.Size = new System.Drawing.Size(560, 84);
             this.pButtons.TabIndex = 2;
             // 
-            // bShowAllCharacter
-            // 
-            this.bShowAllCharacter.Location = new System.Drawing.Point(12, 12);
-            this.bShowAllCharacter.Name = "bShowAllCharacter";
-            this.bShowAllCharacter.Size = new System.Drawing.Size(147, 23);
-            this.bShowAllCharacter.TabIndex = 0;
-            this.bShowAllCharacter.Text = "Pokaż wszystkie postaci";
-            this.bShowAllCharacter.UseVisualStyleBackColor = true;
-            this.bShowAllCharacter.Click += new System.EventHandler(this.bShowAllCharacter_Click);
-            // 
             // bAddCharacter
             // 
             this.bAddCharacter.Location = new System.Drawing.Point(199, 12);
@@ -75,13 +66,23 @@
             this.bAddCharacter.UseVisualStyleBackColor = true;
             this.bAddCharacter.Click += new System.EventHandler(this.bAddCharacter_Click);
             // 
+            // bShowAllCharacter
+            // 
+            this.bShowAllCharacter.Location = new System.Drawing.Point(12, 12);
+            this.bShowAllCharacter.Name = "bShowAllCharacter";
+            this.bShowAllCharacter.Size = new System.Drawing.Size(147, 23);
+            this.bShowAllCharacter.TabIndex = 0;
+            this.bShowAllCharacter.Text = "Pokaż wszystkie postaci";
+            this.bShowAllCharacter.UseVisualStyleBackColor = true;
+            this.bShowAllCharacter.Click += new System.EventHandler(this.bShowAllCharacter_Click);
+            // 
             // SKPKRD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 666);
-            this.Controls.Add(this.pButtons);
             this.Controls.Add(this.dgvCharacters);
+            this.Controls.Add(this.pButtons);
             this.Name = "SKPKRD";
             this.Text = "SKP.KRD";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCharacters)).EndInit();

@@ -5,6 +5,19 @@
         public string Name;
         public SkillValue Value;
 
+        public string Nejm
+        {
+            get
+            {
+                return Name;
+            }
+        }
+
+        public SkillValue Valjue
+        {
+            get { return Value; }
+        }
+
         public virtual void IncreaseValue()
         {
             if ((int) Value < (int) SkillValue.c)

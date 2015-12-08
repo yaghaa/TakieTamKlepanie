@@ -16,12 +16,20 @@ namespace SKP.KRD
         public SKPKRD()
         {
             InitializeComponent();
+
+            dgvCharacters.DoubleClick += grid_DoubleClick;
         }
 
+        public void grid_DoubleClick(object sender, EventArgs eventArgs)
+        {
+            var form = new CharacterDetailsForm((Character)dgvCharacters.CurrentRow.DataBoundItem);
+            form.ShowDialog();
+        }
         private void bShowAllCharacter_Click(object sender, EventArgs e)
         {
             var repository = new DataAccessRepository();
-            dgvCharacters.DataSource = repository.GetCharacters();
+            var temp = Character.CharactersDefault();
+            dgvCharacters.DataSource = temp;
         }
 
         private void bAddCharacter_Click(object sender, EventArgs e)
