@@ -19,6 +19,25 @@ namespace SKP.KRD
             
         }
 
+        public void AddCharacter()
+        {
+            //tworzysz obiekt clienta serwisu
+
+            //przepisujesz wartosci z formatki do CharacterRequest
+
+            //Wywolujesz
+
+
+            using (var service = new ServiceClient())
+            {
+                var obj =new SERVICE.()
+                {
+                    
+                };
+                service.AddCharacter(OBJ);
+            }
+        }
+
       
     }
 }
