@@ -16,15 +16,30 @@ namespace SKP.KRD.Gamification
             get { return _name; }
         }
 
-        public int ExpKrd {
+        public int KrdExperience {
             get
             {
                 return _experienceKRD;
             } 
         }
 
+        public int GeneralExperience
+        {
+            get
+            {
+                return _experienceOverall;
+            }
+        }
 
-        public Character(CharacterModel parameters)
+        public List<Skill> Skills
+        {
+            get
+            {
+                return _skills;
+            }
+        }
+
+        public Character(CharacterParameters parameters)
         {
             _name = parameters.Name;
             _experienceKRD = parameters.ExK;
@@ -37,15 +52,15 @@ namespace SKP.KRD.Gamification
             
              return new List<Character>()
             {
-                new Character(new CharacterModel("Name1", 3, 4, SkillsDefault())),
-                new Character(new CharacterModel("Name2", 2, 4, SkillsDefault())),
-                new Character(new CharacterModel("Name3", 10, 15, SkillsDefault())),
-                new Character(new CharacterModel("Name4", 1, 1, SkillsDefault())),
+                new Character(new CharacterParameters("Name1", 3, 4, DefaultSkills())),
+                new Character(new CharacterParameters("Name2", 2, 4, DefaultSkills())),
+                new Character(new CharacterParameters("Name3", 10, 15, DefaultSkills())),
+                new Character(new CharacterParameters("Name4", 1, 1, DefaultSkills())),
                 
             };
         }
 
-        public static List<Skill> SkillsDefault()
+        public static List<Skill> DefaultSkills()
         {
             var temp = new List<Skill>()
             {

@@ -28,14 +28,14 @@ namespace SKP.KRD
             //Wywolujesz
 
 
-            using (var service = new ServiceClient())
-            {
-                var obj =new SERVICE.()
-                {
+            //using (var service = new ServiceClient())
+            //{
+            //    var obj =new SERVICE.()
+            //    {
                     
-                };
-                service.AddCharacter(OBJ);
-            }
+            //    };
+            //    service.AddCharacter(OBJ);
+            //}
         }
 
       

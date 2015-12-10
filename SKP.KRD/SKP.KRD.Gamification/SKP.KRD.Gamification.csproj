@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
-    <Compile Include="CharacterModel.cs" />
+    <Compile Include="CharacterParameters.cs" />
     <Compile Include="DataAccessRepository.cs" />
     <Compile Include="HardSkill.cs" />
     <Compile Include="IDataAccessRepository.cs" />
