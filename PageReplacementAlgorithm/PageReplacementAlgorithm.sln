@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageReplacementAlgorithm", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemyOperacyjneZadanie3", "SystemyOperacyjneZadanie3\SystemyOperacyjneZadanie3.csproj", "{7CA6DA29-7816-4284-9D1A-BEEAB38DB47E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRA.Tests", "PRA.Tests\PRA.Tests.csproj", "{E0DB5E1C-8483-4E75-A0D6-144CB1B56A41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7CA6DA29-7816-4284-9D1A-BEEAB38DB47E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CA6DA29-7816-4284-9D1A-BEEAB38DB47E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CA6DA29-7816-4284-9D1A-BEEAB38DB47E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0DB5E1C-8483-4E75-A0D6-144CB1B56A41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0DB5E1C-8483-4E75-A0D6-144CB1B56A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0DB5E1C-8483-4E75-A0D6-144CB1B56A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0DB5E1C-8483-4E75-A0D6-144CB1B56A41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
