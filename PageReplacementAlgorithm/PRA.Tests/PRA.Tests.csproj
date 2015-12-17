@@ -56,6 +56,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="PageReplacementAlgorithm\Class1.cs" />
+    <Compile Include="PageReplacementAlgorithm\Class2.cs" />
     <Compile Include="PageReplacementAlgorithm\KlasaDoTestowaniaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
