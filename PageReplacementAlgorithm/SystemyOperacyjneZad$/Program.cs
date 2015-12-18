@@ -37,6 +37,7 @@ namespace SystemyOperacyjneZadanie4
             var iloscOdwolan = Int32.Parse(numberOfRecalls);
 
             var proportional = new ProportionalAlocation();
+            //var proportional = new EqualAlocation();
 
             program.LosujOdwolania(iloscStron, iloscOdwolan);
             int iloscRameczek = 100;
@@ -52,7 +53,7 @@ namespace SystemyOperacyjneZadanie4
 
           var agregat = new LruAgregate();
           var results = agregat.SimulateAll(_odwolania, _pamiecOp, _listaProcesow, 10);
-          Console.WriteLine("PP");
+          Console.WriteLine("");
           foreach (var result in results)
           {
             Console.WriteLine(result);   
