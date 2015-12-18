@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Security.Policy;
 using PageReplacementAlgorithm.Interfaces;
 
 namespace PageReplacementAlgorithm

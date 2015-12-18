@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using FramesDispenser;
 using PageReplacementAlgorithm;
+using PageReplacementAlgorithm.Agregate;
 
-namespace SystemyOperacyjneZadanie3
+namespace SystemyOperacyjneZadanie4
 {
     internal class Program
     {
@@ -49,11 +50,13 @@ namespace SystemyOperacyjneZadanie3
             }
 
 
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("algorytm LRU: " + _listaProcesow[i].Simulation(_odwolania[i], _pamiecOp[i]));
-            }
-            
+          var agregat = new LruAgregate();
+          var results = agregat.SimulateAll(_odwolania, _pamiecOp, _listaProcesow, 10);
+          Console.WriteLine("PP");
+          foreach (var result in results)
+          {
+            Console.WriteLine(result);   
+          }  
             Console.ReadKey();
         }
 
