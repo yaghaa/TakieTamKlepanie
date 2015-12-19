@@ -21,6 +21,7 @@ namespace PageReplacementAlgorithm.Agregate
       var left = 0;
       var results = new int[listaProcesow.Count];
       _pamiecOp = pamiecOp.Select(x => AdaptMemory(x, commonFrames)).ToList();
+      //  _pamiecOp = pamiecOp;
       for (int i = 0; i < listaProcesow.Count; i++)
       {
         results[i] = 0;

@@ -16,6 +16,8 @@ namespace SystemyOperacyjneZadanie4
         private static List<int> _ramekLista = new List<int>();
         private static List<LruPRA> _listaProcesow = new List<LruPRA>();
         private readonly Random _random = new Random();
+        private static List<int[]> _pamiecOp2 = new List<int[]>();
+        private static List<int> _ramekLista2;
 
         private static void Main(string[] args)
         {
@@ -28,20 +30,18 @@ namespace SystemyOperacyjneZadanie4
                 _odwolania.Add(new List<int>());
             }
 
-            Console.WriteLine("Podaj ilość Stron");
-            var numberOfPages = Console.ReadLine();
-            var iloscStron = Int32.Parse(numberOfPages);
+            
 
-            Console.WriteLine("Podaj ilość odwołań:");
+            Console.WriteLine("Podaj ilość ramek:");
             var numberOfRecalls = Console.ReadLine();
-            var iloscOdwolan = Int32.Parse(numberOfRecalls);
+            var iloscRameczek = Int32.Parse(numberOfRecalls);
 
             var proportional = new ProportionalAlocation();
-            //var proportional = new EqualAlocation();
+            var equal = new EqualAlocation();
 
-            program.LosujOdwolania(iloscStron, iloscOdwolan);
-            int iloscRameczek = 100;
+            program.LosujOdwolania();
             _ramekLista = proportional.CreateOperationMemory(_odwolania,iloscRameczek);
+            _ramekLista2 = equal.CreateOperationMemory(_odwolania,iloscRameczek);
 
             var k = 0;
             foreach (var ramka in _ramekLista)
@@ -49,14 +49,44 @@ namespace SystemyOperacyjneZadanie4
                 program.Initialize(ramka, k);
                 k++;
             }
+            k=0;
+            foreach (var ramka in _ramekLista2)
+            {
+                program.Initialize2(ramka, k);
+                k++;
+            }
+
+            var agregat = new LruAgregate();
+            var agregat2 = new LruAgregate();
+            var equalOdwolania = new List<List<int>>();
+            var j = 0;
+            foreach (var item in _odwolania)
+            {
+                equalOdwolania.Add(new List<int>(_odwolania[j]));
+                j++;
+            }
+          var equalProcessList = new List<LruPRA>();
+            for (int i = 0; i < 10; i++)
+            {
+                var lru = new LruPRA();
+                equalProcessList.Add(lru);
+             }
 
 
-          var agregat = new LruAgregate();
-          var results = agregat.SimulateAll(_odwolania, _pamiecOp, _listaProcesow, 10);
-          Console.WriteLine("");
-          foreach (var result in results)
+
+          var results = agregat.SimulateAll(_odwolania, _pamiecOp, _listaProcesow, 3);
+          var results2 = agregat2.SimulateAll(equalOdwolania, _pamiecOp2, equalProcessList, 3);
+          Console.WriteLine();
+          Console.WriteLine("Proporcjonalny");
+            foreach (var result in results)
           {
             Console.WriteLine(result);   
+          }
+            Console.WriteLine();
+            Console.WriteLine("Equal");
+            foreach (var result2 in results2)
+          {
+            Console.WriteLine(result2);   
           }  
             Console.ReadKey();
         }
@@ -71,10 +101,26 @@ namespace SystemyOperacyjneZadanie4
             }
         }
 
-        private void LosujOdwolania(int m, int k)
+        private void Initialize2(int n, int pozycja)
+        {
+            _pamiecOp2.Add(new int[n]);
+            for (var i = 0; i < _pamiecOp2[pozycja].Length; i++)
+            {
+                _pamiecOp2[pozycja][i] = -1;
+            }
+        }
+
+        private void LosujOdwolania()
         {
             for (int j = 0; j < 10; j++)
             {
+                Console.WriteLine("{0} Proces",j+1);
+                
+                var m =_random.Next(11)*4;
+                Console.WriteLine("ilość stron " + m);
+                
+                var k =_random.Next(100)*100;
+                Console.WriteLine("ilość odwołań " + k);
                 var tmp = -1;
                 _odwolania[j].Add(_random.Next(m) + 1);
                 for (int i = 1; i < k; i++)
